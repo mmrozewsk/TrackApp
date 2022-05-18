@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.289" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
-        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/activity_track_details.xml" value="0.22" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_main.xml" value="0.10918114143920596" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_track_details.xml" value="0.22" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/card_layout.xml" value="0.2156084656084656" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/activity_track_details.xml" value="0.25" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/card_layout.xml" value="0.25" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/timer_fragment.xml" value="0.25" />
       </map>
     </option>
   </component>

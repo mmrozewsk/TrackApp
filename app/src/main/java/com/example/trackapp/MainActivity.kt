@@ -1,6 +1,7 @@
 package com.example.trackapp
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +24,14 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = RecyclerAdapter(model, this)
 
-        rcv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        val orientation = resources.configuration.orientation
+
+        if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+            rcv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        }
+        else{
+            rcv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        }
         rcv.adapter = adapter
 
         adapter.setOnClickListener(object : RecyclerAdapter.ClickListener{
