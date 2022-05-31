@@ -13,5 +13,12 @@
         android:layout_height="match_parent"
         android:layout_marginTop="1dp" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.trackapp.TabletFragment"
+        android:layout_width="0dp"
+        android:layout_height="1250dp"
+        android:layout_weight="1" />
+
 
 </LinearLayout>

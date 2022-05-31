@@ -11,68 +11,70 @@
 
     <ImageView
         android:id="@+id/track_img"
-        android:layout_width="557dp"
-        android:layout_height="452dp"
+        android:layout_width="692dp"
+        android:layout_height="654dp"
+        android:layout_above="@+id/length"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="40dp"
         android:contentDescription="@string/track_name"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/length"
-        android:layout_width="606dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/laps"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toEndOf="@+id/track_img"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/length"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/laps"
-        android:layout_width="606dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/date"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="19dp"
-        android:layout_toEndOf="@+id/track_img"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="17dp"
         android:text="@string/laps"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="606dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/best_time"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="13dp"
-        android:layout_toEndOf="@+id/track_img"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="6dp"
         android:text="@string/date"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/best_time"
-        android:layout_width="606dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/last_time"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="16dp"
-        android:layout_toEndOf="@+id/track_img"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/best_time"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/last_time"
-        android:layout_width="606dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="73dp"
-        android:layout_toEndOf="@+id/track_img"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="229dp"
         android:text="@string/last_time"
         android:textSize="25sp" />
 
@@ -83,6 +85,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="90dp"
         android:clickable="true"
         android:contentDescription="@string/timer"
         app:srcCompat="@android:drawable/ic_menu_recent_history"

@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar?.hide()
-
 
         val model = readFromAsset()
 
@@ -41,7 +41,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
     }
+
+
 
     private fun readFromAsset(): List<ItemModel> {
 

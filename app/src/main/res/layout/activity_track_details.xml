@@ -8,40 +8,23 @@
     android:layout_margin="20sp"
     tools:context=".MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/TimerFragmentContainerView"
-        android:name="com.example.trackapp.TimerFragment"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
     <ImageView
         android:id="@+id/track_img"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="401dp"
         android:layout_above="@+id/length"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="23dp"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/track_name" />
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@string/track_name"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/length"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/laps"
-        android:layout_marginStart="10sp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="0dp"
         android:text="@string/length"
         android:textSize="25sp" />
 
@@ -50,7 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/date"
-        android:layout_marginStart="10sp"
         android:layout_marginBottom="6dp"
         android:text="@string/laps"
         android:textSize="25sp" />
@@ -60,7 +42,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/best_time"
-        android:layout_marginStart="10sp"
         android:layout_marginBottom="6dp"
         android:text="@string/date"
         android:textSize="25sp" />
@@ -70,8 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/last_time"
-        android:layout_marginStart="10sp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/best_time"
         android:textSize="25sp" />
 
@@ -80,8 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="61dp"
         android:text="@string/last_time"
         android:textSize="25sp" />
 
@@ -89,12 +68,12 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
         android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_recent_history"
         android:contentDescription="@string/timer"
+        app:srcCompat="@android:drawable/ic_menu_recent_history"
         tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>
