@@ -29,7 +29,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="12dp"
         android:layout_toEndOf="@+id/track_img"
-        android:text="@string/length"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="19dp"
         android:layout_toEndOf="@+id/track_img"
-        android:text="@string/laps"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="13dp"
         android:layout_toEndOf="@+id/track_img"
-        android:text="@string/date"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -62,7 +62,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="16dp"
         android:layout_toEndOf="@+id/track_img"
-        android:text="@string/best_time"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="73dp"
         android:layout_toEndOf="@+id/track_img"
-        android:text="@string/last_time"
+        android:text=""
         android:textSize="25sp" />
 
 </RelativeLayout>

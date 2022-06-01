@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+
         val timer = findViewById<FloatingActionButton>(R.id.floatingActionButton)
 
         timer.setOnClickListener{

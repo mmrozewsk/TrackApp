@@ -31,7 +31,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="18dp"
-        android:text="@string/length"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="17dp"
-        android:text="@string/laps"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -53,7 +53,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="6dp"
-        android:text="@string/date"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -64,7 +64,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="12dp"
-        android:text="@string/best_time"
+        android:text=""
         android:textSize="25sp" />
 
     <TextView
@@ -75,7 +75,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="229dp"
-        android:text="@string/last_time"
+        android:text=""
         android:textSize="25sp" />
 
 </RelativeLayout>

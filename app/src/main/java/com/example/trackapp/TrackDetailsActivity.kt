@@ -44,33 +44,6 @@ class TrackDetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val timerFragment = supportFragmentManager.findFragmentById(R.id.TimerFragmentContainerView)
-//        supportFragmentManager.beginTransaction().apply {
-//            if (timerFragment != null) {
-//                hide(timerFragment)
-//            }
-//        }.commit()
-//
-//        timer.setOnClickListener {
-//            if(img.visibility == View.VISIBLE){
-//                supportFragmentManager.beginTransaction().apply {
-//                    if (timerFragment != null) {
-//                        show(timerFragment)
-//                        img.visibility = View.INVISIBLE
-//                    }
-//                }.commit()
-//            }
-//            else{
-//                supportFragmentManager.beginTransaction().apply {
-//                    if (timerFragment != null) {
-//                        hide(timerFragment)
-//                        img.visibility = View.VISIBLE
-//                    }
-//                }.commit()
-//            }
-//
-//        }
-
 
 
     }
