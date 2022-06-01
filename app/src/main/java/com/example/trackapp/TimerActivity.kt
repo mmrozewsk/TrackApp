@@ -7,8 +7,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import com.example.trackapp.databinding.ActivityTimerBinding
 import kotlin.math.roundToInt
 
@@ -27,9 +25,6 @@ class TimerActivity : AppCompatActivity() {
         serviceIntent = Intent(applicationContext, TimerService::class.java)
         registerReceiver(updateTime, IntentFilter(TimerService.TIMER_UPDATED))
 
-        val startButton = findViewById<Button>(R.id.start_button)
-        val resetButton = findViewById<Button>(R.id.reset_button)
-        val showTime = findViewById<TextView>(R.id.show_time)
 
         binding.startButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }
