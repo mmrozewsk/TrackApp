@@ -16,8 +16,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="26dp"
         android:contentDescription="@string/track_name"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -75,17 +75,5 @@
         android:layout_toEndOf="@+id/track_img"
         android:text="@string/last_time"
         android:textSize="25sp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="end|bottom"
-        android:clickable="true"
-        android:contentDescription="@string/timer"
-        app:srcCompat="@android:drawable/ic_menu_recent_history"
-        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>

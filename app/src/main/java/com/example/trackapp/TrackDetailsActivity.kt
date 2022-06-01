@@ -40,6 +40,7 @@ class TrackDetailsActivity : AppCompatActivity() {
 
         timer.setOnClickListener{
             val intent = Intent(this, TimerActivity::class.java)
+            intent.putExtra("name", name)
             startActivity(intent)
         }
 
@@ -96,18 +97,4 @@ class TrackDetailsActivity : AppCompatActivity() {
         return modeList
     }
 
-    private fun setTime(id: Int, date: String, time: String) {
-
-        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
-        val jsonString = bufferReader.use {
-            it.readText()
-        }
-        val jsonArray = JSONArray(jsonString)
-        val jsonObject: JSONObject = jsonArray.getJSONObject(id)
-        jsonObject.put("last_time", time)
-        if(jsonObject["best_time"] == "" ){
-            jsonObject.put("best_time", time)
-            jsonObject.put("date", date)
-        }
-    }
 }

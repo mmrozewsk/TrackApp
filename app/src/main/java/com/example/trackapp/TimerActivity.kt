@@ -8,7 +8,11 @@ import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.trackapp.databinding.ActivityTimerBinding
+import org.json.JSONArray
+import org.json.JSONObject
 import kotlin.math.roundToInt
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class TimerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTimerBinding
@@ -28,6 +32,32 @@ class TimerActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }
+        binding.saveButton.setOnClickListener  { saveTime() }
+
+    }
+
+
+
+    private fun saveTime(){
+        val name: Int = intent.getIntExtra("name", 0)
+        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
+        val jsonString = bufferReader.use {
+            it.readText()
+        }
+        val jsonArray = JSONArray(jsonString)
+        val jsonObject: JSONObject = jsonArray.getJSONObject(name)
+
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+        val formatted = current.format(formatter)
+
+        val time = binding.showTime.text
+        jsonObject.put("last_time", time)
+
+        bufferReader.use{
+
+        }
+
     }
 
     private fun resetTimer()
@@ -80,4 +110,7 @@ class TimerActivity : AppCompatActivity() {
     }
 
     private fun makeTimeString(hour: Int, min: Int, sec: Int): String = String.format("%02d:%02d:%02d", hour, min, sec)
+
 }
+
+
