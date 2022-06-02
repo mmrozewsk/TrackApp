@@ -6,14 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trackapp.databinding.ActivityTimerBinding
 import org.json.JSONArray
 import org.json.JSONObject
-import java.io.File
-import java.io.FileWriter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
@@ -27,9 +25,26 @@ class TimerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         supportActionBar?.hide()
         binding = ActivityTimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val timeList = findViewById<ListView>(R.id.ranking)
+        val db = DBHelper(this)
+        val name: Int = intent.getIntExtra("name", 0)
+        val model = readFromAsset(name)
+        val trackname = model[0]
+        val getList = db.getBests(trackname)
+        val listItems = arrayOfNulls<String>(getList.size)
+        timeList.invalidateViews()
+        for(i in getList.indices){
+            listItems[i] = getList[i].date + " time: " + getList[i].time
+        }
+
+        val adapter = ArrayAdapter(this, R.layout.single_item, listItems)
+        timeList.adapter = adapter
+
 
         serviceIntent = Intent(applicationContext, TimerService::class.java)
         registerReceiver(updateTime, IntentFilter(TimerService.TIMER_UPDATED))
@@ -37,7 +52,9 @@ class TimerActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }
-        binding.saveButton.setOnClickListener  { saveTime() }
+        binding.saveButton.setOnClickListener  {
+            saveTime()
+            adapter.notifyDataSetChanged()}
 
     }
 
@@ -55,7 +72,7 @@ class TimerActivity : AppCompatActivity() {
         val time = binding.showTime.text
 
         db.updateTime(model[0], time.toString(), formatted)
-
+        db.newLap(model[0], formatted, time.toString())
     }
 
     private fun resetTimer()
@@ -131,5 +148,4 @@ class TimerActivity : AppCompatActivity() {
         return modeList
     }
 }
-
 

@@ -7,7 +7,7 @@
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_splash_screen.xml" value="0.31040564373897706" />
-        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_timer.xml" value="0.25" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_timer.xml" value="0.16" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/activity_track_details.xml" value="0.22" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/card_layout.xml" value="0.2156084656084656" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout-land/tablet_fragment.xml" value="0.2156084656084656" />
@@ -30,6 +30,7 @@
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/activity_track_details.xml" value="0.33" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/card_layout.xml" value="0.1" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/fragment_tablet.xml" value="0.20906370243693886" />
+        <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/single_item.xml" value="0.13916591115140525" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/tablet_fragment.xml" value="0.20906370243693886" />
         <entry key="..\:/Users/MaurycyOprus/AndroidStudioProjects/TrackApp/app/src/main/res/layout/timer_fragment.xml" value="0.25" />
       </map>
