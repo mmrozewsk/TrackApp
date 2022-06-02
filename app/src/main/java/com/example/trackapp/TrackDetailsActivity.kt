@@ -25,17 +25,19 @@ class TrackDetailsActivity : AppCompatActivity() {
         val last_time = findViewById<TextView>(R.id.last_time)
         val timer = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         val name: Int = intent.getIntExtra("name", 0)
-        val model = readFromAsset(name)
-        supportActionBar?.title = model[0]
 
-        Log.d("string", model.toString())
-        val id = this.resources.getIdentifier(model[2], "drawable", this.packageName)
+        val db = DBHelper(this)
+        val getList = db.getAllTracks()
+        val model = getList[name]
+        supportActionBar?.title = model.name
+
+        val id = this.resources.getIdentifier(model.img, "drawable", this.packageName)
         img.setBackgroundResource(id)
-        ("Length of one lap: " + model[3]).also { length.text = it }
-        ("Laps: " + model[4]).also { laps.text = it }
-        ("Date of best time: " + model[5]).also { date_of_best_time.text = it }
-        ("Best time: " + model[6]).also { best_time.text = it }
-        ("Last time: " + model[7]).also { last_time.text = it }
+        ("Length of one lap: " + model.length).also { length.text = it }
+        ("Laps: " + model.laps).also { laps.text = it }
+        ("Date of best time: " + model.date).also { date_of_best_time.text = it }
+        ("Best time: " + model.bestTime).also { best_time.text = it }
+        ("Last time: " + model.lastTime).also { last_time.text = it }
 
 
         timer.setOnClickListener{
@@ -48,26 +50,5 @@ class TrackDetailsActivity : AppCompatActivity() {
 
     }
 
-    private fun readFromAsset(int: Int): List<String> {
-
-        val modeList = ArrayList<String>()
-
-        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
-        val jsonString = bufferReader.use {
-            it.readText()
-        }
-
-        val jsonArray = JSONArray(jsonString)
-        val jsonObject: JSONObject = jsonArray.getJSONObject(int)
-        modeList.add(jsonObject.getString("name"))
-        modeList.add(jsonObject.getString("tournament"))
-        modeList.add(jsonObject.getString("img"))
-        modeList.add(jsonObject.getString("length"))
-        modeList.add(jsonObject.getString("laps"))
-        modeList.add(jsonObject.getString("date"))
-        modeList.add(jsonObject.getString("best_time"))
-        modeList.add(jsonObject.getString("last_time"))
-        return modeList
-    }
 
 }

@@ -93,7 +93,6 @@ class MainActivity : AppCompatActivity() {
 
         val db = DBHelper(this)
         val getList = db.getAllTracks()
-        println(getList)
         val model = getList[pos]
 
         val img = findViewById<ImageView>(R.id.track_img)
