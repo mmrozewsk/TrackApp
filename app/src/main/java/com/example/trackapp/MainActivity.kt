@@ -29,6 +29,73 @@ class MainActivity : AppCompatActivity() {
 
         var which_one = 0
 
+        // inicjalizacja danych do database
+
+        val db = DBHelper(this)
+
+        val track = TrackInfo(
+            name = "Bahrain International Circuit",
+            tournament = "Bahrain Grand Prix",
+            img = "bahrain",
+            length = "5.412 km",
+            laps = 57,
+            date = "",
+            bestTime = "",
+            lastTime = ""
+        )
+
+        val track1 = TrackInfo(
+            name = "Interlagos Circuit",
+            tournament = "Sao Paulo Grand Prix",
+            img = "interlagos",
+            length = "4.309 km",
+            laps = 71,
+            date = "",
+            bestTime = "",
+            lastTime = ""
+        )
+
+        val track2 = TrackInfo(
+            name = "Red Bull Ring",
+            tournament = "Austrian Grand Prix",
+            img = "redbullring",
+            length = "4.318 km",
+            laps = 71,
+            date = "",
+            bestTime = "",
+            lastTime = ""
+        )
+
+        val track3 = TrackInfo(
+            name = "SPA",
+            tournament = "Belgian Grand Prix",
+            img = "spa",
+            length = "7.004 km",
+            laps = 44,
+            date = "",
+            bestTime = "",
+            lastTime = ""
+        )
+
+        val track4 = TrackInfo(
+            name = "Monza",
+            tournament = "Italian Grand Prix",
+            img = "monza",
+            length = "5.793 km",
+            laps = 53,
+            date = "",
+            bestTime = "",
+            lastTime = ""
+        )
+
+
+
+        db.addTrack(track)
+        db.addTrack(track1)
+        db.addTrack(track2)
+        db.addTrack(track3)
+        db.addTrack(track4)
+
         val adapter = RecyclerAdapter(model, this)
 
         val orientation = resources.configuration.orientation

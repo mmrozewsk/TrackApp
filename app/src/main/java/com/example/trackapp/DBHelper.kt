@@ -68,7 +68,6 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null, D
     }
 
 
-
     fun getAllTracks(): List<TrackInfo>{
         val listOfUsers = mutableListOf<TrackInfo>()
         val selectQuery = "SELECT * FROM tracks"
