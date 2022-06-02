@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val db = DBHelper(this.applicationContext)
 
         supportActionBar?.hide()
 
@@ -63,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                 if ( width >= 600){
                     changeText(pos)
                 }else {
+                    print("Pos: ")
+                    println(pos)
                     val intent = Intent(aView.context, TrackDetailsActivity::class.java)
                     intent.putExtra("name", pos)
                     startActivity(intent)
@@ -75,6 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun changeText(pos: Int){
+        val db = DBHelper(this.applicationContext)
         val model = readFromAsset(pos)
 
         val img = findViewById<ImageView>(R.id.track_img)
@@ -94,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         best.text = "best time: " + model[6]
 
         val last = findViewById<TextView>(R.id.last_time)
-        last.text = "last time: " + model[7]
+        last.text = "last time: " + db.getLatest(model[0])
     }
 
     private fun readFromAsset(): List<ItemModel> {

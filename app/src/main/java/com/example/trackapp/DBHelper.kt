@@ -37,15 +37,18 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null, D
         db.close()
     }
 
-    fun getLatest(name: String): Record{
+    fun getLatest(name: String): String{
         val selectQuery = "SELECT * FROM tracks WHERE trackname = \" $name\" ORDER BY date DESC LIMIT 1"
         val db = this.writableDatabase
         val cursor = db.rawQuery(selectQuery, null)
-        if (cursor.getCount() == 0) {
-            val result = Record(cursor.getString(0), cursor.getString(1), cursor.getString(2))
+        if (cursor.moveToFirst()) {
+            print("Cursor: ")
+            println(cursor)
+            val result = cursor.getString(2)
             return result
         }
         db.close()
-        return Record()
+        print("Cursor empty")
+        return "No time on this track"
     }
 }

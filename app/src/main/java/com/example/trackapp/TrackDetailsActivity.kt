@@ -36,7 +36,8 @@ class TrackDetailsActivity : AppCompatActivity() {
         ("Laps: " + model[4]).also { laps.text = it }
         ("Date of best time: " + model[5]).also { date_of_best_time.text = it }
         ("Best time: " + model[6]).also { best_time.text = it }
-        ("Last time: " + db.getLatest(model[0])).also { last_time.text = it }
+        val last = db.getLatest(model[0])
+        ("Last time: " + last).also { last_time.text = it }
 
 
         timer.setOnClickListener{
