@@ -5,14 +5,19 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.trackapp.databinding.ActivityTimerBinding
 import org.json.JSONArray
 import org.json.JSONObject
-import kotlin.math.roundToInt
+import java.io.File
+import java.io.FileWriter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import kotlin.math.roundToInt
+
 
 class TimerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTimerBinding
@@ -40,23 +45,16 @@ class TimerActivity : AppCompatActivity() {
 
     private fun saveTime(){
         val name: Int = intent.getIntExtra("name", 0)
-        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
-        val jsonString = bufferReader.use {
-            it.readText()
-        }
-        val jsonArray = JSONArray(jsonString)
-        val jsonObject: JSONObject = jsonArray.getJSONObject(name)
+        val db = DBHelper(this)
+        val model = readFromAsset(name)
 
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
         val formatted = current.format(formatter)
 
         val time = binding.showTime.text
-        jsonObject.put("last_time", time)
 
-        bufferReader.use{
-
-        }
+        db.updateTime(model[0], time.toString(), formatted)
 
     }
 
@@ -111,6 +109,27 @@ class TimerActivity : AppCompatActivity() {
 
     private fun makeTimeString(hour: Int, min: Int, sec: Int): String = String.format("%02d:%02d:%02d", hour, min, sec)
 
+    private fun readFromAsset(int: Int): List<String> {
+
+        val modeList = ArrayList<String>()
+
+        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
+        val jsonString = bufferReader.use {
+            it.readText()
+        }
+
+        val jsonArray = JSONArray(jsonString)
+        val jsonObject: JSONObject = jsonArray.getJSONObject(int)
+        modeList.add(jsonObject.getString("name"))
+        modeList.add(jsonObject.getString("tournament"))
+        modeList.add(jsonObject.getString("img"))
+        modeList.add(jsonObject.getString("length"))
+        modeList.add(jsonObject.getString("laps"))
+        modeList.add(jsonObject.getString("date"))
+        modeList.add(jsonObject.getString("best_time"))
+        modeList.add(jsonObject.getString("last_time"))
+        return modeList
+    }
 }
 
 

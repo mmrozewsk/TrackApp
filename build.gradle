@@ -9,6 +9,7 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
+        //noinspection GradlePluginVersion
         classpath 'com.android.tools.build:gradle:1.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // The Fabric Gradle plugin uses an open ended version to react

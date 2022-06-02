@@ -4,34 +4,49 @@
     "tournament": "Bahrain Grand Prix",
     "img": "bahrain",
     "length": "5.412 km",
-    "laps": "57"
+    "laps": "57",
+    "date": "",
+    "best_time": "",
+    "last_time": ""
   },
   {
     "name": "Interlagos Circuit",
     "tournament": "Sao Paulo Grand Prix",
     "img": "interlagos",
     "length": "4.309 km",
-    "laps": "71"
-  },
-  {
-    "name": "Red Bull Ring",
-    "tournament": "Austrian Grand Prix",
-    "img": "redbullring",
-    "length": "4.318 km",
-    "laps": "71"
-  },
+    "laps": "71",
+    "date": "",
+    "best_time": "",
+    "last_time": ""
+  },  {
+  "name": "Red Bull Ring",
+  "tournament": "Austrian Grand Prix",
+  "img": "redbullring",
+  "length": "4.318 km",
+  "laps": "71",
+  "date": "",
+  "best_time": "",
+  "last_time": ""
+},
+
   {
     "name": "SPA",
     "tournament": "Belgian Grand Prix",
     "img": "spa",
     "length": "7.004 km",
-    "laps": "44"
+    "laps": "44",
+    "date": "",
+    "best_time": "",
+    "last_time": ""
   },
   {
     "name": "Monza",
     "tournament": "Italian Grand Prix",
     "img": "monza",
     "length": "5.793 km",
-    "laps": "53"
+    "laps": "53",
+    "date": "",
+    "best_time": "",
+    "last_time": ""
   }
 ]

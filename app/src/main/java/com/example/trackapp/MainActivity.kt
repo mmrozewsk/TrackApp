@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.card_layout.*
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -83,31 +84,36 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 
 
     @SuppressLint("SetTextI18n")
     private fun changeText(pos: Int){
-        val model = readFromAsset(pos)
+
+        val db = DBHelper(this)
+        val getList = db.getAllTracks()
+        println(getList)
+        val model = getList[pos]
 
         val img = findViewById<ImageView>(R.id.track_img)
-        val id = this.resources.getIdentifier(model[2], "drawable", this.packageName)
+        val id = this.resources.getIdentifier(model.img, "drawable", this.packageName)
         img.setBackgroundResource(id)
 
         val length = findViewById<TextView>(R.id.length)
-        length.text = "length: " + model[3]
+        length.text = "length: " + model.length
 
         val laps = findViewById<TextView>(R.id.laps)
-        laps.text = "laps: " + model[4]
+        laps.text = "laps: " + model.laps
 
         val date = findViewById<TextView>(R.id.date)
-        date.text = "date: " + model[5]
+        date.text = "date: " + model.date
 
         val best = findViewById<TextView>(R.id.best_time)
-        best.text = "best time: " + model[6]
+        best.text = "best time: " + model.bestTime
 
         val last = findViewById<TextView>(R.id.last_time)
-        last.text = "last time: " + model[7]
+        last.text = "last time: " + model.lastTime
     }
 
     private fun readFromAsset(): List<ItemModel> {
@@ -132,26 +138,5 @@ class MainActivity : AppCompatActivity() {
         return modeList
     }
 
-    private fun readFromAsset(int: Int): List<String> {
-
-        val modeList = ArrayList<String>()
-
-        val bufferReader = application.resources.openRawResource(R.raw.tracks).bufferedReader()
-        val jsonString = bufferReader.use {
-            it.readText()
-        }
-
-        val jsonArray = JSONArray(jsonString)
-        val jsonObject: JSONObject = jsonArray.getJSONObject(int)
-        modeList.add(jsonObject.getString("name"))
-        modeList.add(jsonObject.getString("tournament"))
-        modeList.add(jsonObject.getString("img"))
-        modeList.add(jsonObject.getString("length"))
-        modeList.add(jsonObject.getString("laps"))
-        modeList.add(jsonObject.getString("date"))
-        modeList.add(jsonObject.getString("best_time"))
-        modeList.add(jsonObject.getString("last_time"))
-        return modeList
-    }
 
 }
