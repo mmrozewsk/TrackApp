@@ -16,16 +16,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-
-//        val animation = AnimationUtils.loadAnimation(this, R.anim.car_anim)
-//        val car = findViewById<ImageView>(R.id.car)
-//        car.startAnimation(animation)
-//
-//        Handler().postDelayed({
-//            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
-//            finish()
-//        }, 4000.toLong())
-
         val car = findViewById<ImageView>(R.id.car)
         val objectAnimator = ObjectAnimator.ofFloat(car, "translationX", 1500f)
         objectAnimator.duration=3000
