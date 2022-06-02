@@ -15,6 +15,7 @@ class TrackDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_track_details)
+        val db = DBHelper(this.applicationContext)
 
 
         val img = findViewById<ImageView>(R.id.track_img)
@@ -35,43 +36,14 @@ class TrackDetailsActivity : AppCompatActivity() {
         ("Laps: " + model[4]).also { laps.text = it }
         ("Date of best time: " + model[5]).also { date_of_best_time.text = it }
         ("Best time: " + model[6]).also { best_time.text = it }
-        ("Last time: " + model[7]).also { last_time.text = it }
+        ("Last time: " + db.getLatest(model[0])).also { last_time.text = it }
 
 
         timer.setOnClickListener{
             val intent = Intent(this, TimerActivity::class.java)
+            intent.putExtra("trackname", model[0])
             startActivity(intent)
         }
-
-//        val timerFragment = supportFragmentManager.findFragmentById(R.id.TimerFragmentContainerView)
-//        supportFragmentManager.beginTransaction().apply {
-//            if (timerFragment != null) {
-//                hide(timerFragment)
-//            }
-//        }.commit()
-//
-//        timer.setOnClickListener {
-//            if(img.visibility == View.VISIBLE){
-//                supportFragmentManager.beginTransaction().apply {
-//                    if (timerFragment != null) {
-//                        show(timerFragment)
-//                        img.visibility = View.INVISIBLE
-//                    }
-//                }.commit()
-//            }
-//            else{
-//                supportFragmentManager.beginTransaction().apply {
-//                    if (timerFragment != null) {
-//                        hide(timerFragment)
-//                        img.visibility = View.VISIBLE
-//                    }
-//                }.commit()
-//            }
-//
-//        }
-
-
-
     }
 
     private fun readFromAsset(int: Int): List<String> {
