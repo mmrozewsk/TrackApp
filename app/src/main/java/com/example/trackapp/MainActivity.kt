@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val db = DBHelper(this.applicationContext)
 
+        val t1 = "00:22:30"
+        val t2 = "00:22:26"
+
+        val better = betterTime(t1, t2)
+        print("Better time: ")
+        println(better)
         supportActionBar?.hide()
 
         val model = readFromAsset()
@@ -73,6 +79,43 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun betterTime(t1: String, t2: String): String {
+        if (t1[0].digitToInt() > t2[0].digitToInt())
+            return t2
+        else if (t1[0].digitToInt() < t2[0].digitToInt())
+            return t1
+        else{
+            if (t1[1].digitToInt() > t2[1].digitToInt())
+                return t2
+            else if (t1[1].digitToInt() < t2[1].digitToInt())
+                return t1
+            else{
+                if (t1[3].digitToInt() > t2[3].digitToInt())
+                    return t2
+                else if (t1[3].digitToInt() < t2[3].digitToInt())
+                    return t1
+                else{
+                    if (t1[4].digitToInt() > t2[4].digitToInt())
+                        return t2
+                    else if (t1[4].digitToInt() < t2[4].digitToInt())
+                        return t1
+                    else{
+                        if (t1[6].digitToInt() > t2[6].digitToInt())
+                            return t2
+                        else if (t1[6].digitToInt() < t2[6].digitToInt())
+                            return t1
+                        else{
+                            if (t1[7].digitToInt() > t2[7].digitToInt())
+                                return t2
+                            else
+                                return t1
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
